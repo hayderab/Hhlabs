@@ -1,18 +1,32 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import type { NextRequest } from 'next/server';
+import * as nodemailer from 'nodemailer';
+
+// Validate environment variables
+const validateEnvVariables = () => {
+  const required = ['EMAIL_USER', 'EMAIL_PASSWORD'];
+  const missing = required.filter(key => !process.env[key]);
+  if (missing.length > 0) {
+    throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
+  }
+};
 
 // Create reusable transporter object using Zoho SMTP
-const transporter = nodemailer.createTransport({
-  host: 'smtppro.zoho.eu',
-  port: 465,
-  secure: true, // use SSL
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
+const createTransporter = () => {
+  validateEnvVariables();
+  
+  return nodemailer.createTransport({
+    host: 'smtppro.zoho.eu',
+    port: 465,
+    secure: true, // use SSL
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD,
+    },
+  });
+};
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
     const { name, email, subject, message } = await request.json();
 
@@ -32,6 +46,9 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    // Create transporter
+    const transporter = createTransporter();
 
     // Setup email data
     const mailOptions = {
@@ -67,7 +84,7 @@ ${message}
   } catch (error) {
     console.error('Error sending email:', error);
     return NextResponse.json(
-      { message: 'Failed to send email' },
+      { message: error instanceof Error ? error.message : 'Failed to send email' },
       { status: 500 }
     );
   }
