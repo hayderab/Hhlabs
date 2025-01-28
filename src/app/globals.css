@@ -5,17 +5,82 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #3B82F6;
+  --accent-dark: #1D4ED8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-white text-gray-900;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-black via-gray-500 to-black;
+  }
+
+  .hover-card {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 4s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 15s ease infinite;
+}
+
+.mesh-gradient {
+  background-color: hsla(0, 0%, 100%, 1);
+  background-image:
+    radial-gradient(at 21% 33%, hsla(225, 100%, 50%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 79% 76%, hsla(339, 100%, 55%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 96% 10%, hsla(269, 100%, 50%, 0.15) 0px, transparent 50%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.clip-path-slant {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
