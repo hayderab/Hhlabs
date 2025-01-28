@@ -34,8 +34,8 @@ export default function RootLayout({
               <div>
                 <h3 className="text-xl font-bold mb-4">Contact</h3>
                 <p className="text-gray-400">
-                  Email: contact@hhlabs.ai<br />
-                  Location: Silicon Valley
+                  Email: hhlabshuseynhaider@gmail.com<br />
+                  Location: London
                 </p>
               </div>
               <div>

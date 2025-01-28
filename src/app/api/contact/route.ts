@@ -1,33 +1,19 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import * as nodemailer from 'nodemailer';
+import sgMail from '@sendgrid/mail';
 
 // Validate environment variables
 const validateEnvVariables = () => {
-  const required = ['EMAIL_USER', 'EMAIL_PASSWORD'];
+  const required = ['SENDGRID_API_KEY', 'TO_EMAIL'];
   const missing = required.filter(key => !process.env[key]);
   if (missing.length > 0) {
     throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
   }
 };
 
-// Create reusable transporter object using Zoho SMTP
-const createTransporter = () => {
-  validateEnvVariables();
-  
-  return nodemailer.createTransport({
-    host: 'smtppro.zoho.eu',
-    port: 465,
-    secure: true, // use SSL
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASSWORD,
-    },
-  });
-};
-
 export async function POST(request: NextRequest) {
   try {
+    validateEnvVariables();
     const { name, email, subject, message } = await request.json();
 
     // Validate input
@@ -47,13 +33,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create transporter
-    const transporter = createTransporter();
+    // Initialize SendGrid
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
     // Setup email data
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // Send to yourself
+    const msg = {
+      to: process.env.TO_EMAIL!,
+      from: process.env.TO_EMAIL!, // Verified sender email
       replyTo: email,
       subject: `Contact Form: ${subject}`,
       text: `
@@ -74,8 +60,8 @@ ${message}
       `,
     };
 
-    // Send mail
-    await transporter.sendMail(mailOptions);
+    // Send email
+    await sgMail.send(msg);
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
