@@ -5,7 +5,6 @@ import { blogs } from "./data/blogs";
 import HeroBackground from "./components/HeroBackground";
 import Hero3D from "./components/Hero3D";
 import ContactForm from "./components/ContactForm";
-import Image from "next/image";
 import Link from 'next/link';
 
 const services = [

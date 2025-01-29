@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 const features = [
   {
@@ -85,12 +84,12 @@ export default function AIDevelopment() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <motion.div
                 key={feature.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: 0.1 }}
                 className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center mb-6">
@@ -137,15 +136,15 @@ export default function AIDevelopment() {
                 title: 'Deployment & Integration',
                 description: 'Seamless integration into your existing systems with minimal disruption.'
               }
-            ].map((step, index) => (
+            ].map((step) => (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                initial={{ opacity: 0, x: step.title === 'Requirements Analysis' ? -50 : step.title === 'Model Design & Development' ? 0 : step.title === 'Testing & Validation' ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative mb-12 ${index % 2 === 0 ? 'pr-1/2' : 'pl-1/2'}`}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className={`relative mb-12 ${step.title === 'Requirements Analysis' ? 'pr-1/2' : step.title === 'Model Design & Development' ? 'pl-1/2' : step.title === 'Testing & Validation' ? 'pr-1/2' : 'pl-1/2'}`}
               >
-                <div className={`flex ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                <div className={`flex ${step.title === 'Requirements Analysis' ? 'justify-end' : step.title === 'Model Design & Development' ? 'justify-start' : step.title === 'Testing & Validation' ? 'justify-end' : 'justify-start'}`}>
                   <div className="w-1/2 p-6 bg-white rounded-2xl shadow-lg">
                     <h3 className="text-xl font-bold mb-4">{step.title}</h3>
                     <p className="text-gray-600">{step.description}</p>
@@ -172,7 +171,7 @@ export default function AIDevelopment() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
+            {caseStudies.map((study) => (
               <motion.div
                 key={study.title}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -183,8 +182,8 @@ export default function AIDevelopment() {
                   <h3 className="text-2xl font-bold mb-4">{study.title}</h3>
                   <p className="text-gray-200 mb-6">{study.description}</p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {study.metrics.map((metric, i) => (
-                      <div key={i} className="bg-white/10 rounded-lg p-4 text-center">
+                    {study.metrics.map((metric) => (
+                      <div key={metric} className="bg-white/10 rounded-lg p-4 text-center">
                         <p className="text-sm">{metric}</p>
                       </div>
                     ))}
@@ -206,7 +205,7 @@ export default function AIDevelopment() {
           >
             <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Let's discuss how our AI development expertise can help you achieve your business goals.
+              Let&apos;s discuss how our AI development expertise can help you achieve your business goals.
             </p>
             <button className="px-8 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition-all hover:scale-105 inline-flex items-center justify-center group">
               <span>Start Your AI Journey</span>
