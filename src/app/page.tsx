@@ -5,6 +5,7 @@ import { blogs } from "./data/blogs";
 import HeroBackground from "./components/HeroBackground";
 import Hero3D from "./components/Hero3D";
 import ContactForm from "./components/ContactForm";
+import Image from "next/image";
 
 const services = [
   {
@@ -35,14 +36,25 @@ const services = [
 
 const projects = [
   {
-    title: "AI-Powered Analytics",
-    description: "Real-time data analysis platform",
-    gradient: "from-purple-600 to-blue-600"
+    title: "Jobasssit",
+    description: "AI-Powered Interviews, Jobs Automation & Company Search",
+    gradient: "from-gray-900 to-black",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10.5 3.75a1.5 1.5 0 0 0-1.5 1.5v.75h-1.5a.75.75 0 0 0-.75.75v13.5c0 .414.336.75.75.75h10.5a.75.75 0 0 0 .75-.75V6.75a.75.75 0 0 0-.75-.75h-1.5v-.75a1.5 1.5 0 0 0-1.5-1.5h-4.5ZM9 5.25v-.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75v.75H9Zm4.5 4.5a.75.75 0 0 0-1.5 0V12h-2.25a.75.75 0 0 0 0 1.5h2.25v2.25a.75.75 0 0 0 1.5 0V13.5h2.25a.75.75 0 0 0 0-1.5h-2.25V9.75Z" />
+      </svg>
+    )
   },
   {
-    title: "Smart Automation",
-    description: "Enterprise workflow automation",
-    gradient: "from-red-600 to-orange-600"
+    title: "Competitor Analysis",
+    description: "AI-powered tool for analyzing market competitors and industry trends",
+    gradient: "from-black to-gray-900",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
+        <path fillRule="evenodd" d="M2.25 13.5a8.25 8.25 0 0 1 8.25-8.25.75.75 0 0 1 .75.75v6.75H18a.75.75 0 0 1 .75.75 8.25 8.25 0 0 1-16.5 0Z" clipRule="evenodd" />
+        <path fillRule="evenodd" d="M12.75 3a.75.75 0 0 1 .75-.75 8.25 8.25 0 0 1 8.25 8.25.75.75 0 0 1-.75.75h-7.5a.75.75 0 0 1-.75-.75V3Z" clipRule="evenodd" />
+      </svg>
+    )
   }
 ];
 
@@ -159,21 +171,24 @@ export default function Home() {
           >
             Latest Projects
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                className="relative group"
+                className="relative group cursor-pointer"
               >
-                <div className="aspect-video relative overflow-hidden rounded-2xl hover-card">
-                  <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} animate-gradient-x`} />
-                  <div className="relative z-10 h-full flex flex-col justify-end p-8">
-                    <h3 className="text-3xl font-bold mb-3">{project.title}</h3>
-                    <p className="text-gray-200 text-lg">{project.description}</p>
-                    <button className="mt-6 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all w-fit">
-                      Learn More →
+                <div className={`relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] bg-gradient-to-br ${project.gradient} p-8 hover:shadow-gray-400/20`}>
+                  <div className="absolute top-4 right-4 text-white/80">
+                    {project.icon}
+                  </div>
+                  <div className="relative z-10 flex flex-col h-full min-h-[200px]">
+                    <h3 className="text-2xl font-bold mb-3 text-white mt-4">{project.title}</h3>
+                    <p className="text-gray-200 text-lg mb-6 max-w-[80%]">{project.description}</p>
+                    <button className="mt-auto px-6 py-2.5 bg-white text-black font-medium rounded-full hover:bg-gray-100 transition-all duration-300 w-fit flex items-center gap-2 group">
+                      Learn More 
+                      <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </button>
                   </div>
                 </div>
