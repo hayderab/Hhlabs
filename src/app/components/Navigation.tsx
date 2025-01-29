@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -19,12 +18,10 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { href: '/services/ai-development', label: 'AI Development' },
-    { href: '/services/data-pipelines', label: 'Data Pipelines' },
-    { href: '/services/custom-models', label: 'Custom Models' },
-    { href: '/services/ai-automation', label: 'AI Automation' },
-    { href: '/services/ai-hosting', label: 'AI Hosting' },
-    { href: '/services/ai-consulting', label: 'AI Consulting' }
+    { href: '#services', label: 'Services' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#blog', label: 'Blog' },
+    { href: '#contact', label: 'Contact' }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -53,15 +50,9 @@ export default function Navigation() {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            <Link href="/" className="relative px-8 py-2">
-              <Image
-                src={scrolled ? '/H&H Labs black logo.svg' : '/H&H Labs black logo.svg'}
-                alt="H&H Labs Logo"
-                width={50}
-                height={30}
-                className="relative z-10"
-                priority
-              />
+            <Link href="/" className="text-2xl font-bold relative group">
+              <span className="relative z-10">H&H Labs</span>
+              <span className="absolute inset-x-0 bottom-0 h-2 bg-black/5 group-hover:h-full transition-all duration-300" />
             </Link>
             
             <div className="hidden md:flex items-center space-x-1">
