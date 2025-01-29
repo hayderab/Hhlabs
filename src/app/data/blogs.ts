@@ -12,7 +12,7 @@ export const blogs = [
   {
     id: 2,
     title: "Breakthrough in Language Model Fine-tuning",
-    excerpt: "Recent advances in fine-tuning techniques that are revolutionizing natural language processing.",
+    excerpt: "Recent advances in fine-tuning techniques that are revolutionising natural language processing.",
     author: "James Wilson",
     date: "2025-01-15",
     readTime: "8 min read",

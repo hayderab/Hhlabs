@@ -6,33 +6,82 @@ import HeroBackground from "./components/HeroBackground";
 import Hero3D from "./components/Hero3D";
 import ContactForm from "./components/ContactForm";
 import Image from "next/image";
+import Link from 'next/link';
 
 const services = [
   {
-    title: "AI Integration",
-    description: "Seamlessly integrate AI into your existing solutions",
-    icon: "",
-    gradient: "from-blue-500 to-cyan-500"
+    title: "AI Development",
+    description: "We build and set up AI models for your business. From testing to deployment, we make sure everything runs smoothly.",
+    path: "ai-development",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+    ),
+    gradient: "from-black to-gray-800"
   },
   {
-    title: "Model Fine-tuning",
-    description: "Custom LLM fine-tuning for your specific needs",
-    icon: "",
-    gradient: "from-purple-500 to-pink-500"
+    title: "Data Pipelines & Processing",
+    description: "We clean, organise, and prepare your data so AI can use it properly. No messy data, no slow systems.",
+    path: "data-pipelines",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+      </svg>
+    ),
+    gradient: "from-gray-900 to-black"
   },
   {
-    title: "Automation Solutions",
-    description: "End-to-end automation for business processes",
-    icon: "",
-    gradient: "from-orange-500 to-red-500"
+    title: "Custom AI Models",
+    description: "We customise AI models to fit your business so they perform better and give more accurate results.",
+    path: "custom-models",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <circle cx="12" cy="9" r="3" />
+      </svg>
+    ),
+    gradient: "from-black to-gray-800"
   },
   {
-    title: "AI Model Hosting",
-    description: "Secure and scalable hosting for your AI models",
-    icon: "",
-    gradient: "from-green-500 to-emerald-500"
+    title: "AI Automation",
+    description: "Cut down on manual work with AI-powered automation. Get things done faster and more efficiently.",
+    path: "ai-automation",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+    gradient: "from-gray-900 to-black"
+  },
+  {
+    title: "AI Hosting & Infrastructure",
+    description: "We host and manage your AI models, whether on the cloud or your own servers, so they stay fast and reliable.",
+    path: "ai-hosting",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+        <path d="M3 12v8c0 1.66 4 3 9 3s9-1.34 9-3v-8" />
+        <path d="M3 5v8c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+      </svg>
+    ),
+    gradient: "from-black to-gray-800"
+  },
+  {
+    title: "AI Consulting & Strategy",
+    description: "Not sure where to start? We guide you on using AI the right way, from setup to long-term success.",
+    path: "ai-consulting",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+        <path d="M12 20l9-5-9-5-9 5 9 5z" />
+        <path d="M12 8v12" />
+      </svg>
+    ),
+    gradient: "from-gray-900 to-black"
   }
 ];
+
 
 const projects = [
   {
@@ -90,7 +139,7 @@ export default function Home() {
                     </span>
                   </h1>
                   <p className="text-xl text-gray-600 max-w-xl text-balance">
-                    We transform businesses through cutting-edge AI integration, automation, and custom solutions.
+                    We transform businesses through cutting-edge AI integration, automation, and customised solutions.
                   </p>
                 </motion.div>
 
@@ -132,29 +181,34 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 relative overflow-hidden">
+      <section id="services" className="py-20 relative overflow-hidden bg-white">
         <div className="container mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-4xl md:text-5xl font-bold mb-16 text-center text-gradient"
+            className="text-4xl md:text-5xl font-bold mb-16 text-center"
           >
             Our Services
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="glass-card hover-card p-6"
+                className="group p-8 rounded-2xl border border-gray-200 hover:border-black transition-all duration-300 hover:shadow-xl bg-white relative overflow-hidden"
               >
-                <div className={`text-4xl mb-4 w-16 h-16 rounded-xl flex items-center justify-center bg-gradient-to-br ${service.gradient}`}>
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <Link href={`/services/${service.path}`} className="block">
+                  <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-300 ${service.gradient}" />
+                  <div className="relative z-10">
+                    <div className="mb-6 w-12 h-12 rounded-xl flex items-center justify-center bg-gray-100 group-hover:bg-black group-hover:text-white transition-all duration-300">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-black transition-colors">{service.title}</h3>
+                    <p className="text-gray-600 group-hover:text-gray-700 transition-colors">{service.description}</p>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -253,10 +307,17 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="w-full bg-gradient-to-b from-white to-gray-50 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="w-full bg-gradient-to-b from-white to-gray-50 py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px)] bg-[size:40px] opacity-[0.15]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px] opacity-[0.15]"></div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        >
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Let&apos;s Build Something Amazing Together
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -265,7 +326,7 @@ export default function Home() {
             </p>
           </div>
           <ContactForm />
-        </div>
+        </motion.div>
       </section>
     </div>
   );

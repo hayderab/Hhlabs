@@ -60,10 +60,10 @@ export default function ContactForm() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <form onSubmit={handleSubmit} className="space-y-6 backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-gray-800/10 shadow-2xl">
+      <form onSubmit={handleSubmit} className="space-y-6 bg-white rounded-2xl border border-gray-200 p-8 shadow-lg hover:border-black transition-all duration-300">
         <div className="grid grid-cols-2 gap-6">
           <div className="col-span-2 sm:col-span-1">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
               Name
             </label>
             <input
@@ -73,13 +73,13 @@ export default function ContactForm() {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-gray-900/5 border border-gray-800/10 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder-gray-400"
+              className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 placeholder-gray-400 hover:border-black"
               placeholder="Your name"
             />
           </div>
 
           <div className="col-span-2 sm:col-span-1">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
               Email
             </label>
             <input
@@ -89,13 +89,13 @@ export default function ContactForm() {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-gray-900/5 border border-gray-800/10 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder-gray-400"
+              className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 placeholder-gray-400 hover:border-black"
               placeholder="your@email.com"
             />
           </div>
 
           <div className="col-span-2">
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
               Subject
             </label>
             <input
@@ -105,13 +105,13 @@ export default function ContactForm() {
               required
               value={formData.subject}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-gray-900/5 border border-gray-800/10 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder-gray-400"
+              className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 placeholder-gray-400 hover:border-black"
               placeholder="What's this about?"
             />
           </div>
 
           <div className="col-span-2">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
               Message
             </label>
             <textarea
@@ -121,7 +121,7 @@ export default function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               rows={5}
-              className="w-full px-4 py-3 bg-gray-900/5 border border-gray-800/10 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder-gray-400 resize-none"
+              className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 placeholder-gray-400 resize-none hover:border-black"
               placeholder="Your message here..."
             />
           </div>
@@ -131,9 +131,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-4 px-6 text-white font-medium rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transform hover:scale-[1.02] transition-all duration-200 ${
-              loading ? 'opacity-70 cursor-not-allowed' : ''
-            }`}
+            className={`w-full py-4 px-6 text-white font-medium rounded-xl bg-black hover:bg-gray-800 transform hover:scale-[1.02] transition-all duration-200 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
           >
             <span className="flex items-center justify-center">
               {loading ? (
@@ -153,11 +151,7 @@ export default function ContactForm() {
 
         {status.type && (
           <div
-            className={`p-4 rounded-xl ${
-              status.type === 'success' 
-                ? 'bg-green-500/10 text-green-500 border border-green-500/20' 
-                : 'bg-red-500/10 text-red-500 border border-red-500/20'
-            }`}
+            className={`p-4 rounded-xl ${status.type === 'success' ? 'bg-black/5 text-black border border-black/20' : 'bg-red-500/10 text-red-500 border border-red-500/20'}`}
           >
             {status.message}
           </div>
