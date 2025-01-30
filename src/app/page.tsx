@@ -84,7 +84,7 @@ const services = [
 
 const projects = [
   {
-    title: "Jobasssit",
+    title: "Jobassistant",
     description: "AI-Powered Interviews, Jobs Automation & Company Search",
     gradient: "from-gray-900 to-black",
     icon: (
