@@ -1,6 +1,12 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import sgMail from '@sendgrid/mail';
+import { ResponseError } from '@sendgrid/mail';
+
+interface SendGridErrorBody {
+  message: string;
+  code: number;
+}
 
 // Validate environment variables
 const validateEnvVariables = () => {
@@ -72,23 +78,31 @@ ${message}
         { message: 'Email sent successfully' },
         { status: 200 }
       );
-    } catch (error: any) {
+    } catch (error) {
       console.error('SendGrid Error:', error);
-      if (error.response) {
-        const { message, code } = error.response.body;
-        if (code === 403) {
+      if (error instanceof ResponseError && error.response?.body) {
+        try {
+          const errorBody = JSON.parse(error.response.body) as SendGridErrorBody;
+          if (errorBody.code === 403) {
+            return NextResponse.json(
+              { 
+                message: 'Email sending failed. Please verify your SendGrid sender email address.',
+                details: 'The email address used to send emails must be verified in your SendGrid account.'
+              },
+              { status: 403 }
+            );
+          }
           return NextResponse.json(
-            { 
-              message: 'Email sending failed. Please verify your SendGrid sender email address.',
-              details: 'The email address used to send emails must be verified in your SendGrid account.'
-            },
-            { status: 403 }
+            { message: `Email sending failed: ${errorBody.message}` },
+            { status: 500 }
+          );
+        } catch (parseError) {
+          console.error('Error parsing SendGrid error response:', parseError);
+          return NextResponse.json(
+            { message: 'Email sending failed' },
+            { status: 500 }
           );
         }
-        return NextResponse.json(
-          { message: `Email sending failed: ${message}` },
-          { status: 500 }
-        );
       }
       throw error;
     }
