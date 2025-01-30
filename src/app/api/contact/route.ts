@@ -39,8 +39,14 @@ export async function POST(request: NextRequest) {
     // Setup email data
     const msg = {
       to: process.env.TO_EMAIL!,
-      from: process.env.TO_EMAIL!, // Verified sender email
-      replyTo: email,
+      from: {
+        email: process.env.TO_EMAIL!,
+        name: 'HH Labs Contact Form'
+      },
+      replyTo: {
+        email: email,
+        name: name
+      },
       subject: `Contact Form: ${subject}`,
       text: `
 Name: ${name}
@@ -60,17 +66,36 @@ ${message}
       `,
     };
 
-    // Send email
-    await sgMail.send(msg);
-
-    return NextResponse.json(
-      { message: 'Email sent successfully' },
-      { status: 200 }
-    );
+    try {
+      await sgMail.send(msg);
+      return NextResponse.json(
+        { message: 'Email sent successfully' },
+        { status: 200 }
+      );
+    } catch (error: any) {
+      console.error('SendGrid Error:', error);
+      if (error.response) {
+        const { message, code } = error.response.body;
+        if (code === 403) {
+          return NextResponse.json(
+            { 
+              message: 'Email sending failed. Please verify your SendGrid sender email address.',
+              details: 'The email address used to send emails must be verified in your SendGrid account.'
+            },
+            { status: 403 }
+          );
+        }
+        return NextResponse.json(
+          { message: `Email sending failed: ${message}` },
+          { status: 500 }
+        );
+      }
+      throw error;
+    }
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('Contact Form Error:', error);
     return NextResponse.json(
-      { message: error instanceof Error ? error.message : 'Failed to send email' },
+      { message: 'Failed to send message' },
       { status: 500 }
     );
   }
