@@ -10,77 +10,71 @@ import Link from 'next/link';
 const services = [
   {
     title: "AI Development",
-    description: "We build and set up AI models for your business. From testing to deployment, we make sure everything runs smoothly.",
+    description: "Transform your ideas into intelligent solutions with our custom AI development. We turn complex problems into smart, efficient systems.",
     path: "ai-development",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
       </svg>
     ),
-    gradient: "from-black to-gray-800"
+    gradient: "from-indigo-500 to-indigo-600"
   },
   {
     title: "Data Pipelines & Processing",
-    description: "We clean, organise, and prepare your data so AI can use it properly. No messy data, no slow systems.",
+    description: "Build robust data flows that feed your AI systems. We structure and optimize your data to unlock its full potential.",
     path: "data-pipelines",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+        <path d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
       </svg>
     ),
-    gradient: "from-gray-900 to-black"
+    gradient: "from-cyan-500 to-cyan-600"
   },
   {
     title: "Custom AI Models",
-    description: "We customise AI models to fit your business so they perform better and give more accurate results.",
+    description: "Get AI models designed specifically for your unique challenges. We train and fine-tune models that understand your business context.",
     path: "custom-models",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        <circle cx="12" cy="9" r="3" />
+        <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
       </svg>
     ),
-    gradient: "from-black to-gray-800"
+    gradient: "from-green-500 to-green-600"
   },
   {
     title: "AI Automation",
-    description: "Cut down on manual work with AI-powered automation. Get things done faster and more efficiently.",
+    description: "Transform repetitive tasks into automated workflows. Our AI solutions help your team focus on what matters most.",
     path: "ai-automation",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    gradient: "from-gray-900 to-black"
+    gradient: "from-amber-500 to-amber-600"
   },
   {
     title: "AI Hosting & Infrastructure",
-    description: "We host and manage your AI models, whether on the cloud or your own servers, so they stay fast and reliable.",
+    description: "Get a secure, scalable foundation for your AI systems. We handle the technical complexity so you can focus on innovation.",
     path: "ai-hosting",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-        <path d="M3 12v8c0 1.66 4 3 9 3s9-1.34 9-3v-8" />
-        <path d="M3 5v8c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+        <path d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
       </svg>
     ),
-    gradient: "from-black to-gray-800"
+    gradient: "from-emerald-500 to-emerald-600"
   },
   {
     title: "AI Consulting & Strategy",
-    description: "Not sure where to start? We guide you on using AI the right way, from setup to long-term success.",
+    description: "Navigate the AI landscape with confidence. We help you identify opportunities and create a roadmap for AI adoption.",
     path: "ai-consulting",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 14l9-5-9-5-9 5 9 5z" />
-        <path d="M12 20l9-5-9-5-9 5 9 5z" />
-        <path d="M12 8v12" />
+        <path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
       </svg>
     ),
-    gradient: "from-gray-900 to-black"
+    gradient: "from-rose-500 to-rose-600"
   }
 ];
-
 
 const projects = [
   {
@@ -156,7 +150,7 @@ export default function Home() {
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3m9 9a9 9 0 019-9" />
                     </svg>
                   </button>
                   <button className="px-8 py-4 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition-all hover:scale-105">
@@ -196,16 +190,36 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="group p-8 rounded-2xl border border-gray-200 hover:border-black transition-all duration-300 hover:shadow-xl bg-white relative overflow-hidden"
+                className="group p-8 rounded-2xl border border-gray-200 hover:border-transparent transition-all duration-300 hover:shadow-xl bg-white relative overflow-hidden"
               >
                 <Link href={`/services/${service.path}`} className="block">
-                  <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-300 ${service.gradient}" />
-                  <div className="relative z-10">
-                    <div className="mb-6 w-12 h-12 rounded-xl flex items-center justify-center bg-gray-100 group-hover:bg-black group-hover:text-white transition-all duration-300">
-                      {service.icon}
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-black transition-colors">{service.title}</h3>
-                    <p className="text-gray-600 group-hover:text-gray-700 transition-colors">{service.description}</p>
+                  {/* Gradient Background on Hover */}
+                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-gradient-to-br ${service.gradient}`} />
+                  
+                  {/* Icon */}
+                  <div className={`relative mb-6 text-${service.gradient.split('-')[1]}-600`}>
+                    {service.icon}
+                  </div>
+                  
+                  {/* Content */}
+                  <h3 className={`text-xl font-semibold mb-3 text-gray-900 group-hover:text-${service.gradient.split('-')[1]}-600 transition-colors duration-300`}>
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    {service.description}
+                  </p>
+                  
+                  {/* Learn More */}
+                  <div className={`flex items-center text-${service.gradient.split('-')[1]}-600`}>
+                    <span className="mr-2">Learn More</span>
+                    <svg
+                      className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 12h16m0 0l-6-6m6 6l-6 6m7-7H3m9 9a9 9 0 019-9" />
+                    </svg>
                   </div>
                 </Link>
               </motion.div>

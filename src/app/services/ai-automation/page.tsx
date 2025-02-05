@@ -5,222 +5,136 @@ import { motion } from 'framer-motion';
 const features = [
   {
     title: 'Process Automation',
-    description: 'Transform manual workflows into efficient, automated processes that save time and reduce errors.',
+    description: 'Transform manual workflows into intelligent, automated processes that save time and reduce errors.',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        <path d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
       </svg>
     )
   },
   {
-    title: 'Intelligent Workflows',
-    description: 'Create smart, adaptive workflows that learn and improve from your business processes and data.',
+    title: 'Smart Decision Making',
+    description: 'Implement AI-driven decision systems that learn and improve from your business data.',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <path d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
       </svg>
     )
   },
   {
-    title: 'Decision Automation',
-    description: 'Implement AI-powered decision-making systems that handle routine choices with precision and speed.',
+    title: 'Adaptive Systems',
+    description: 'Create self-improving automation systems that adapt to changing business conditions.',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path d="M4.745 3A23.933 23.933 0 003 12c0 3.183.62 6.22 1.745 9M19.5 3c.967 2.78 1.5 5.817 1.5 9s-.533 6.22-1.5 9M8.25 8.885l1.444-.89a.75.75 0 011.105.402l2.402 7.206a.75.75 0 001.104.401l1.445-.889m-8.25.75l.213.09a1.687 1.687 0 002.062-.617l4.45-6.676a1.688 1.688 0 012.062-.618l.213.09" />
       </svg>
     )
   },
   {
-    title: 'Integration & Monitoring',
-    description: 'Seamlessly connect automated systems with your existing tools and track performance in real-time.',
+    title: 'Performance Analytics',
+    description: 'Monitor and measure the impact of automation with detailed analytics and insights.',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        <path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
       </svg>
     )
   }
 ];
 
-const caseStudies = [
+const workProcess = [
   {
-    title: 'Customer Service Automation',
-    description: 'Implemented an AI-powered system that automated 75% of customer enquiries for a leading telecom provider.',
-    metrics: ['75% enquiry automation', '90% customer satisfaction', '£2.1M annual savings'],
-    gradient: 'from-gray-900 to-black'
+    title: 'Process Analysis',
+    description: 'We identify opportunities for automation and map out intelligent workflows.',
+    gradient: 'from-amber-500 to-amber-600'
   },
   {
-    title: 'Supply Chain Optimisation',
-    description: 'Developed an automated inventory management system that reduced stockouts by 40% and improved efficiency.',
-    metrics: ['40% fewer stockouts', '28% cost reduction', '95% accuracy rate'],
-    gradient: 'from-black to-gray-900'
+    title: 'Solution Design',
+    description: 'We design AI-powered automation systems tailored to your processes.',
+    gradient: 'from-amber-600 to-amber-700'
+  },
+  {
+    title: 'Implementation',
+    description: 'We build and integrate automated workflows with your existing systems.',
+    gradient: 'from-amber-700 to-amber-800'
+  },
+  {
+    title: 'Enhancement',
+    description: 'We continuously optimise automation performance based on real-world results.',
+    gradient: 'from-amber-800 to-amber-900'
   }
 ];
 
 export default function AIAutomation() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px)] bg-[size:40px] opacity-[0.15]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px] opacity-[0.15]"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black via-gray-600 to-black">
-              AI Automation
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-              Transform your business operations with intelligent automation solutions. We help you streamline processes, reduce manual work, and achieve unprecedented efficiency through AI-powered automation.
-            </p>
-          </motion.div>
+    <div className="min-h-screen bg-grey-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-centre mb-12"
+        >
+          <h1 className="text-4xl font-bold text-grey-900 mb-4">
+            AI Automation
+          </h1>
+          <p className="text-xl text-grey-600 max-w-3xl mx-auto">
+            Repetitive, manual tasks can waste both time and resources. Our AI-driven automation solutions streamline these processes—reducing human error and freeing your team to focus on strategic, higher-value work.
+          </p>
+        </motion.div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-16">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+            >
+              <div className="text-amber-600 mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-semibold mb-2 text-grey-900">{feature.title}</h3>
+              <p className="text-grey-600">{feature.description}</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
 
-      {/* Features Grid */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {features.map((feature) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center mb-6">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6">Our Automation Process</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A systematic approach to implementing intelligent automation in your business.
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gray-200"></div>
-            {[
-              {
-                title: 'Process Analysis',
-                description: 'We thoroughly analyse your current workflows to identify automation opportunities and potential improvements.'
-              },
-              {
-                title: 'Solution Design',
-                description: 'Our team designs intelligent automation solutions tailored to your specific processes and requirements.'
-              },
-              {
-                title: 'Implementation',
-                description: 'Careful implementation with thorough testing to ensure smooth integration with existing systems.'
-              },
-              {
-                title: 'Optimisation & Scale',
-                description: 'Continuous monitoring and refinement to improve performance and expand automation capabilities.'
-              }
-            ].map((step) => (
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-grey-900 mb-8 text-centre">How We Work</h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {workProcess.map((step, index) => (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 0, x: step.title === 'Process Analysis' ? -50 : step.title === 'Solution Design' ? 0 : step.title === 'Implementation' ? 50 : 0 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className={`relative mb-12 ${step.title === 'Process Analysis' ? 'pr-1/2' : step.title === 'Solution Design' ? 'pl-1/2' : ''}`}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`rounded-lg p-6 text-white bg-gradient-to-br ${step.gradient}`}
               >
-                <div className={`flex ${step.title === 'Process Analysis' ? 'justify-end' : step.title === 'Solution Design' ? 'justify-start' : ''}`}>
-                  <div className="w-1/2 p-6 bg-white rounded-2xl shadow-lg">
-                    <h3 className="text-xl font-bold mb-4">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
-                  </div>
-                </div>
+                <div className="text-3xl font-bold mb-4">{index + 1}</div>
+                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                <p className="text-white/90">{step.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Case Studies */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-center mb-16"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="text-centre bg-grey-900 text-white rounded-2xl p-8"
+        >
+          <h2 className="text-2xl font-bold mb-4">Why It Matters</h2>
+          <p className="text-lg text-grey-300 max-w-3xl mx-auto">
+            By automating routine tasks, you reduce manual errors and operational costs, and empower your team to focus on more innovative work.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block mt-6 px-8 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colours"
           >
-            <h2 className="text-4xl font-bold mb-6">Success Stories</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real-world examples of our automation solutions in action.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {caseStudies.map((study) => (
-              <motion.div
-                key={study.title}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                className="relative group cursor-pointer"
-              >
-                <div className={`relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] bg-gradient-to-br ${study.gradient} p-8 text-white`}>
-                  <h3 className="text-2xl font-bold mb-4">{study.title}</h3>
-                  <p className="text-gray-200 mb-6">{study.description}</p>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {study.metrics.map((metric, i) => (
-                      <div key={i} className="bg-white/10 rounded-lg p-4 text-center">
-                        <p className="text-sm">{metric}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl font-bold mb-6">Ready to Automate Your Business?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Let&apos;s discuss how our AI automation solutions can transform your operations and boost efficiency.
-            </p>
-            <button className="px-8 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition-all hover:scale-105 inline-flex items-center justify-center group">
-              <span>Start Your Automation Journey</span>
-              <svg 
-                className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </button>
-          </motion.div>
-        </div>
-      </section>
+            Start Automating Today
+          </a>
+        </motion.div>
+      </div>
     </div>
   );
 }
