@@ -63,10 +63,10 @@ export default function AISystemsRecap() {
             >
               <h2 className="text-2xl font-bold text-gray-800 border-b border-gray-200 pb-3 mb-4">The Big Picture: Shift to Action-Based AI</h2>
               <p className="mb-6">
-                You should have already felt that AI systems are shifting from just being passive tools to active "agentic" solutions. The past year saw a "real acceleration" in AI progress, and experts predict it will "move beyond just generating text and images and morph into agents that can complete complex tasks". This leap is exciting, but some warn it could also "diminish human control" if left unchecked. In short, AI is no longer just answering questions – it's poised to take action in the real world.
+                You should have already felt that AI systems are shifting from just being passive tools to active &quot;agentic&quot; solutions. The past year saw a &quot;real acceleration&quot; in AI progress, and experts predict it will &quot;move beyond just generating text and images and morph into agents that can complete complex tasks&quot;. This leap is exciting, but some warn it could also &quot;diminish human control&quot; if left unchecked. In short, AI is no longer just answering questions – it&#39;s poised to take action in the real world.
               </p>
               <p className="mb-6">
-                AI systems do not just chat anymore; they act. Instead of merely suggesting an action, an advanced AI system can execute the action itself. ChatGPT's latest features exemplify this shift: it "enables AI systems to retrieve data, process information, and take action" using tools like web browsers and databases. In other words, an AI agent can carry out multi-step jobs end-to-end. These agents are now seen as an "active digital workforce" augmenting human teams. A support bot might not only draft a reply but also send it and update records on its own, and not just through API but through a web interface.
+                The real magic happens when these capabilities combine. Modern AI systems can now &quot;understand your intent, break down complex tasks, and execute them across different domains.&quot; They&#39;re becoming true assistants rather than just tools. shift: it &quot;enables AI systems to retrieve data, process information, and take action&quot; using tools like web browsers and databases. In other words, an AI agent can carry out multi-step jobs end-to-end. These agents are now seen as an &quot;active digital workforce&quot; augmenting human teams. A support bot might not only draft a reply but also send it and update records on its own, and not just through API but through a web interface.
               </p>
             </motion.div>
 
@@ -75,9 +75,9 @@ export default function AISystemsRecap() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              <h2 className="text-2xl font-bold text-gray-800 border-b border-gray-200 pb-3 mb-4 mt-10">CUA and OpenAI's Responses API: Building Agentic AI</h2>
+              <h2 className="text-2xl font-bold text-gray-800 border-b border-gray-200 pb-3 mb-4 mt-10">CUA and OpenAI&#39;s Responses API: Building Agentic AI</h2>
               <p className="mb-6">
-                To develop action-oriented AI systems, many organizations are rolling out new frameworks. OpenAI, for instance, just introduced tools for agentic applications, including a Responses API that pairs GPT-style language skills with built-in web search, file handling, and a computer-using agent (CUA) to operate the software. In practice, an AI using these tools could fill out forms or update databases by itself. OpenAI also released an Agents SDK to orchestrate such workflows and made it open-source. Similarly, open-source projects like open-cuak and browser-use provide "Operator"-style automation without proprietary fees. These efforts lower the barrier to creating AI agents that can not only think but also act on a user's behalf.
+                To develop action-oriented AI systems, many organizations are rolling out new frameworks. OpenAI, for instance, just introduced tools for agentic applications, including a Responses API that pairs GPT-style language skills with built-in web search, file handling, and a computer-using agent (CUA) to operate the software. In practice, an AI using these tools could fill out forms or update databases by itself. OpenAI also released an Agents SDK to orchestrate such workflows and made it open-source. Similarly, open-source projects like open-cuak and browser-use provide &quot;Operator&quot;-style automation without proprietary fees. These efforts lower the barrier to creating AI agents that can not only think but also act on a user&#39;s behalf.
               </p>
             </motion.div>
 
@@ -88,7 +88,7 @@ export default function AISystemsRecap() {
             >
               <h2 className="text-2xl font-bold text-gray-800 border-b border-gray-200 pb-3 mb-4 mt-10">Large Action Models (LAMs): Beyond Language to Execution</h2>
               <p className="mb-6">
-                An LAM is essentially a large AI model (basically a fined-tuned multi-modal LLM) that doesn't just understand language – it can do things in response. Think of it as the "can-do cousin" of a large language model. Where a traditional assistant might tell you how to solve a problem, a LAM-powered system could actually carry out the solution for you. This represents a major shift, potentially allowing AI to automate entire processes rather than just generate content. LAMs do this by combining language understanding with decision-making and tool use.
+                What&#39;s fascinating is how these systems are evolving to work together. We&#39;re seeing the rise of &quot;multi-agent systems&quot; where AI entities collaborate, specialize, and even debate with each other to solve complex problems. Think of it as an &quot;AI team&quot; rather than a single assistant.guage model. Where a traditional assistant might tell you how to solve a problem, a LAM-powered system could actually carry out the solution for you. This represents a major shift, potentially allowing AI to automate entire processes rather than just generate content. LAMs do this by combining language understanding with decision-making and tool use.
               </p>
               <p className="mb-6">
                 By turning AI from a passive responder into an active problem-solver, they unlock new possibilities – but also demand greater reliability, since mistakes by an agent that acts can have real consequences.
@@ -108,10 +108,10 @@ export default function AISystemsRecap() {
             >
               <h2 className="text-2xl font-bold text-gray-800 border-b border-gray-200 pb-3 mb-4 mt-10">The Dead Internet Theory and AI Saturation</h2>
               <p className="mb-6">
-                One side effect of these agentic advances is a flood of AI-generated content online. This has revived the Dead Internet Theory, which claims much of today's online content is produced by bots rather than people. In 2025, that idea feels eerily plausible. A significant portion of tweets, posts, and even news articles are now machine-generated, blurring the line between genuine human voices and automated output.
+                One side effect of these agentic advances is a flood of AI-generated content online. This has revived the Dead Internet Theory, which claims much of today&#39;s online content is produced by bots rather than people. In 2025, that idea feels eerily plausible. A significant portion of tweets, posts, and even news articles are now machine-generated, blurring the line between genuine human voices and automated output.
               </p>
               <p className="mb-6">
-                AI bots even amplify each other's content, creating fake engagement cycles with little human involvement. As one tech journalist asked, "with a large portion of the internet being AI-generated content, is a 'dead internet' really that far off?" This saturation of AI content makes it harder to know what's real online. We may need new tools to verify human-made material and keep the internet feeling "alive" with authentic interaction.
+                AI bots even amplify each other&#39;s content, creating fake engagement cycles with little human involvement. As one tech journalist asked, &quot;with a large portion of the internet being AI-generated content, is a &#39;dead internet&#39; really that far off?&quot; This saturation of AI content makes it harder to know what&#39;s real online. We may need new tools to verify human-made material and keep the internet feeling &quot;alive&quot; with authentic interaction.
               </p>
             </motion.div>
 
@@ -122,13 +122,13 @@ export default function AISystemsRecap() {
             >
               <h2 className="text-2xl font-bold text-gray-800 border-b border-gray-200 pb-3 mb-4 mt-10">Conclusion: Balancing Potential With Oversight</h2>
               <p className="mb-6">
-                The evolution of AI into autonomous agents brings great promise – and calls for prudence. On one hand, these agents can handle drudge work and complex tasks at lightning speed, freeing people to focus on creativity and strategy. On the other hand, giving AI the freedom to act means setting clear guardrails.
+                The most significant shift in AI is the emergence of agent-based systems. These aren&#39;t just passive tools but active participants that can &quot;plan, reason, and execute tasks with minimal human oversight&quot;. They&#39;re designed to &quot;understand your goals&quot; and take steps to achieve them, making them more like &quot;assistants with agency&quot; than traditional software.gy. On the other hand, giving AI the freedom to act means setting clear guardrails.
               </p>
               <p className="mb-6">
-                As some experts warn, AI's impact could "either save humanity or [gradually] destroy it" depending on how responsibly we guide it. That may sound extreme, but it underscores the importance of oversight. Accordingly, developers and policymakers are crafting safety guidelines to keep agentic AI aligned with human values.
+                As some experts warn, AI&#39;s impact could &quot;either save humanity or [gradually] destroy it&quot; depending on how responsibly we guide it. That may sound extreme, but it underscores the importance of oversight. Accordingly, developers and policymakers are crafting safety guidelines to keep agentic AI aligned with human values.
               </p>
               <p className="mb-6">
-                Keeping a human in the loop for critical decisions remains vital. Ultimately, it's about balance: harnessing AI's potential to act on our behalf, while ensuring humans retain final control. If we get it right, autonomous agents could become invaluable partners – powerful, yet under human direction.
+                Keeping a human in the loop for critical decisions remains vital. Ultimately, it&#39;s about balance: harnessing AI&#39;s potential to act on our behalf, while ensuring humans retain final control. If we get it right, autonomous agents could become invaluable partners – powerful, yet under human direction.
               </p>
             </motion.div>
           </div>
