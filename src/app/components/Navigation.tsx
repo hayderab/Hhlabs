@@ -18,25 +18,29 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { href: '#services', label: 'Services' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#blog', label: 'Blog' },
-    { href: '#contact', label: 'Contact' }
+    { href: '#services', label: 'Services', isAnchor: true },
+    { href: '#projects', label: 'Projects', isAnchor: true },
+    { href: '/blog', label: 'Blog', isAnchor: false },
+    { href: '#contact', label: 'Contact', isAnchor: true }
   ];
 
-  const scrollToSection = (sectionId: string) => {
+  const handleNavigation = (href: string, isAnchor: boolean) => {
     setIsMenuOpen(false); // Close mobile menu if open
-    const element = document.querySelector(sectionId);
-    if (element) {
-      const offset = 80; // Account for fixed header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+    
+    if (isAnchor) {
+      const element = document.querySelector(href);
+      if (element) {
+        const offset = 80; // Account for fixed header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
+    // For non-anchor links, navigation will happen through the Link component
   };
 
   return (
@@ -57,14 +61,26 @@ export default function Navigation() {
             
             <div className="hidden md:flex items-center space-x-1">
               {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="px-4 py-2 rounded-full text-gray-600 hover:text-black relative group"
-                >
-                  <span className="relative z-10">{link.label}</span>
-                  <span className="absolute inset-0 bg-black/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
-                </button>
+                link.isAnchor ? (
+                  <button
+                    key={link.href}
+                    onClick={() => handleNavigation(link.href, true)}
+                    className="px-4 py-2 rounded-full text-gray-600 hover:text-black relative group"
+                  >
+                    <span className="relative z-10">{link.label}</span>
+                    <span className="absolute inset-0 bg-black/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
+                  </button>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="px-4 py-2 rounded-full text-gray-600 hover:text-black relative group"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span className="relative z-10">{link.label}</span>
+                    <span className="absolute inset-0 bg-black/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
+                  </Link>
+                )
               ))}
               <button className="ml-4 px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-all hover:scale-105">
                 Get Started
@@ -103,13 +119,24 @@ export default function Navigation() {
           >
             <div className="flex flex-col items-center justify-center h-full gap-8 text-2xl">
               {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-gray-600 hover:text-black transition-colors"
-                >
-                  {link.label}
-                </button>
+                link.isAnchor ? (
+                  <button
+                    key={link.href}
+                    onClick={() => handleNavigation(link.href, true)}
+                    className="text-gray-600 hover:text-black transition-colors"
+                  >
+                    {link.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-600 hover:text-black transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
               <button className="mt-4 px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-all">
                 Get Started

@@ -1,30 +1,30 @@
 export const blogs = [
   {
-    id: 1,
-    title: "The Future of AI Integration in Enterprise",
-    excerpt: "Exploring how modern businesses are leveraging AI to transform their operations and drive innovation.",
-    author: "Dr. Sarah Chen",
-    date: "2025-01-20",
-    readTime: "5 min read",
-    category: "AI Integration",
-    image: "/blog/ai-enterprise.jpg"
+    id: "a-quick-recap-of-ai-systems",
+    title: "A Quick Recap of AI Systems",
+    excerpt: "The past year saw a 'real acceleration' in AI progress, experts predict. AI systems are shifting from just being passive tools to active 'agentic' solutions.",
+    author: "Huseyn Gorbani",
+    date: "March 22, 2025",
+    readTime: "7 min read",
+    category: "AI Systems",
+    image: "/blog/ai-systems-recap.jpg"
   },
   {
-    id: 2,
-    title: "Breakthrough in Language Model Fine-tuning",
-    excerpt: "Recent advances in fine-tuning techniques that are revolutionising natural language processing.",
-    author: "James Wilson",
-    date: "2025-01-15",
-    readTime: "8 min read",
-    category: "Research",
-    image: "/blog/language-model.jpg"
+    id: "what-comes-after-todays-ai",
+    title: "What Comes After Today's AI",
+    excerpt: "LLMs are evolving into teams of specialised agents that plan, delegate and act. By 2030, expect cognitive swarms of AI agents coordinating business workflows.",
+    author: "Huseyn Gorbani",
+    date: "March 05, 2025",
+    readTime: "5 min read",
+    category: "AI Future",
+    image: "/blog/future-ai.jpg"
   },
   {
     id: 3,
     title: "Automation: The Key to Scaling Operations",
     excerpt: "How intelligent automation is helping businesses scale their operations while maintaining quality.",
-    author: "Michael Roberts",
-    date: "2025-01-10",
+    author: "Huseyn Gorbani",
+    date: "January 10, 2025",
     readTime: "6 min read",
     category: "Automation",
     image: "/blog/automation.jpg"

@@ -266,8 +266,11 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-20">
-        <div className="container mx-auto px-4">
+      <section id="blog" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px)] bg-[size:40px] opacity-[0.15]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px] opacity-[0.15]"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -282,39 +285,109 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="glass-card hover-card overflow-hidden"
+                className="glass-card hover-card overflow-hidden transform transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="aspect-[16/9] relative bg-gradient-to-br from-gray-900 to-gray-600">
-                  <div className="absolute inset-0 flex items-center justify-center text-white text-opacity-20 text-9xl font-bold">
-                    H&H
+                <Link href={`/blog/${blog.id}`} className="block">
+                  <div className={`aspect-[16/9] relative ${blog.id === 'a-quick-recap-of-ai-systems' 
+                    ? 'bg-gradient-to-br from-amber-500 to-amber-600' 
+                    : blog.id === 'what-comes-after-todays-ai' 
+                      ? 'bg-gradient-to-br from-indigo-500 to-indigo-600' 
+                      : 'bg-gradient-to-br from-gray-700 to-gray-900'}`}
+                  >
+                    {/* Abstract pattern overlay */}
+                    <div className="absolute inset-0 opacity-20">
+                      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5" opacity="0.5"/>
+                          </pattern>
+                          <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+                            <rect width="100" height="100" fill="url(#smallGrid)"/>
+                            <path d="M 100 0 L 0 0 0 100" fill="none" stroke="white" strokeWidth="1" opacity="0.5"/>
+                          </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid)" />
+                      </svg>
+                    </div>
+                    
+                    {/* Icon or symbol */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      {blog.id === 'a-quick-recap-of-ai-systems' ? (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                          <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                        </svg>
+                      ) : blog.id === 'what-comes-after-todays-ai' ? (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                          <path d="M4.745 3A23.933 23.933 0 003 12c0 3.183.62 6.22 1.745 9M19.5 3c.967 2.78 1.5 5.817 1.5 9s-.533 6.22-1.5 9M8.25 8.885l1.444-.89a.75.75 0 011.105.402l2.402 7.206a.75.75 0 001.104.401l1.445-.889m-8.25.75l.213.09a1.687 1.687 0 002.062-.617l4.45-6.676a1.688 1.688 0 012.062-.618l.213.09" />
+                        </svg>
+                      ) : (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-white/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                          <path d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                        </svg>
+                      )}
+                    </div>
+                    
+                    {/* Read time badge */}
+                    <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white text-sm px-3 py-1 rounded-full">
+                      {blog.readTime}
+                    </div>
                   </div>
-                </div>
+                </Link>
+                
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
-                    <span>{blog.category}</span>
+                    <span className={`px-2 py-1 rounded-full text-xs ${blog.id === 'a-quick-recap-of-ai-systems' 
+                      ? 'bg-amber-100 text-amber-800' 
+                      : blog.id === 'what-comes-after-todays-ai' 
+                        ? 'bg-indigo-100 text-indigo-800' 
+                        : 'bg-gray-100 text-gray-800'}`}
+                    >
+                      {blog.category}
+                    </span>
                     <span>•</span>
                     <span>{blog.readTime}</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 hover:text-gray-600 transition-colors">
-                    {blog.title}
-                  </h3>
+                  
+                  <Link href={`/blog/${blog.id}`} className="group block">
+                    <h3 className={`text-xl font-bold mb-3 group-hover:${blog.id === 'a-quick-recap-of-ai-systems' 
+                      ? 'text-amber-600' 
+                      : blog.id === 'what-comes-after-todays-ai' 
+                        ? 'text-indigo-600' 
+                        : 'text-gray-600'} transition-colors`}
+                    >
+                      {blog.title}
+                    </h3>
+                  </Link>
+                  
                   <p className="text-gray-600 mb-4 line-clamp-2">
                     {blog.excerpt}
                   </p>
+                  
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">{blog.date}</span>
-                    <button className="text-black font-medium hover:underline">
-                      Read More →
-                    </button>
+                    <Link 
+                      href={`/blog/${blog.id}`} 
+                      className={`font-medium flex items-center gap-1 ${blog.id === 'a-quick-recap-of-ai-systems' 
+                        ? 'text-amber-600 hover:text-amber-700' 
+                        : blog.id === 'what-comes-after-todays-ai' 
+                          ? 'text-indigo-600 hover:text-indigo-700' 
+                          : 'text-gray-800 hover:text-black'}`}
+                    >
+                      Read Article
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </Link>
                   </div>
                 </div>
               </motion.article>
             ))}
           </div>
+          
           <div className="text-center mt-12">
-            <button className="px-8 py-4 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition-all hover:scale-105">
+            <Link href="/blog" className="inline-block px-8 py-4 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition-all hover:scale-105">
               View All Articles
-            </button>
+            </Link>
           </div>
         </div>
       </section>
